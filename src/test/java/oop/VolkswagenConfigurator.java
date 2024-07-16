@@ -12,9 +12,10 @@ public class VolkswagenConfigurator extends MasinaConfigurator {
 
 
     public VolkswagenConfigurator(String marca, String model, Integer an,
-                                  Double pretStandard, Double pretFinal, String linieEchipare,
-                                  String motor, String vopsea, String roti, String tapiterie, List<String> dotariOptionale) {
-        super(marca, model, an, pretStandard, pretFinal);
+                                   String linieEchipare,
+                                  String motor, String vopsea, String roti, String tapiterie,
+                                  List<String> dotariOptionale) {
+        super(marca, model, an);
         this.linieEchipare = linieEchipare;
         this.motor = motor;
         this.vopsea = vopsea;
