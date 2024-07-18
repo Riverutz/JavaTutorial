@@ -19,13 +19,13 @@ public class OopTest {
         Logan.infoDacia();
 
         System.out.println("=========");
+        List<String> optionalePolo = Arrays.asList("Faruri LED Matrix", "Trapa de sticla panoramica",
+                "Alarma antifurt", "Keyless Access");
+        VolkswagenConfigurator Polo = new VolkswagenConfigurator("Volkswagen",
+                "Polo", 2023, "Advanced",
+                "Polo Advanced 1.0 TSI", "Argintiu (reflex silver metallic)", "Jante aliaj 15' - Essex, negre", "Stofa negru titan", optionalePolo);
+        Polo.infoVolkswagen();
 
-//        List<String> optionalePolo = Arrays.asList("Pachet Confort", "Trapa de sticla panoramica",
-//                "Alarma antifurt", "Keyless Access");
-//        VolkswagenConfigurator Polo = new VolkswagenConfigurator("Volkswagen",
-//                "Polo", 2023, "Advanced",
-//                "Polo life 1.0 TSI", "Gri", "Roti 15", "stofa", optionalePolo);
-//        Polo.infoVolkswagen();
 
     }
 }

@@ -44,5 +44,5 @@ public class CarTest {
                 "stofa/microfibra - Soul", dotariExterioareGolf, dotariInterioareGolf,
                 dotariGeneraleGolf, accesoriiGolf);
         golf.infoVolkswagen();
-        }
+    }
 }

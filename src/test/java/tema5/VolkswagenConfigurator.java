@@ -3,19 +3,20 @@ package tema5;
 import java.util.List;
 
 public class VolkswagenConfigurator extends CarConfigurator {
-    public String linieDeEchipare;
-    public String motor;
-    public String transmisie;
-    public String tractiune;
-    public String combustibil;
-    public String vopsea; //Rosu (kings red metallic) 736,61 €
-    public String roti; //Jante aliaj usor "Leeds" 7,5J x 18,527,17 €
-    public String interior;
-    public List<String> dotariOptionaleExterioare;
-    public List<String> dotariOptionaleInterioare;
-    public List<String> dotariOptionaleGenerale;
-    public List<String> accesoriiVolkswagen;
-
+    private String linieDeEchipare;
+    private String motor;
+    private String transmisie;
+    private String tractiune;
+    private String combustibil;
+    private String vopsea; //Rosu (kings red metallic) 736,61 €
+    private String roti; //Jante aliaj usor "Leeds" 7,5J x 18,527,17 €
+    private String interior;
+    private List<String> dotariOptionaleExterioare;
+    private List<String> dotariOptionaleInterioare;
+    private List<String> dotariOptionaleGenerale;
+    private List<String> accesoriiVolkswagen;
+    private Integer pretStandard;
+    private Integer pretFinal;
 
     public VolkswagenConfigurator(String marca, String model, Integer anulFabricatiei,
                                   String linieDeEchipare, String motor,
@@ -70,7 +71,7 @@ public class VolkswagenConfigurator extends CarConfigurator {
     }
 
     public void calculPretStandard() {
-        if (model.equals("Golf")) {
+        if (getModel().equals("Golf")) {
             if (linieDeEchipare.equals("Life")) {
                 pretStandard = 28245;
             }
@@ -85,12 +86,12 @@ public class VolkswagenConfigurator extends CarConfigurator {
 
             }
         }
-        System.out.println("Pretul standard al masinii este: \n" + pretStandard + " EURO");
+        System.out.println("Pretul standard al masinii cu echiparea " + getLinieDeEchipare() + " incepe de la: " + pretStandard + " EURO");
     }
 
     public void calculPretFinal() {
         double pretConfigurare = 0;
-        if (model.equals("Golf")) {
+        if (getModel().equals("Golf")) {
             if (linieDeEchipare.equals("Advanced")) {
                 switch (vopsea) {
                     case "Rosu (kings red metallic)":
@@ -154,8 +155,112 @@ public class VolkswagenConfigurator extends CarConfigurator {
 
                     }
                 pretFinal = (int) (pretStandard + pretConfigurare);
-                System.out.println("Pretul final al masinii este: \n" + pretFinal + " EURO");
+                System.out.println("Pretul final al masinii cu optiunile alese este de: " + pretFinal + " EURO");
             }
         }
+    }
+
+    public String getLinieDeEchipare() {
+        return linieDeEchipare;
+    }
+
+    public void setLinieDeEchipare(String linieDeEchipare) {
+        this.linieDeEchipare = linieDeEchipare;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    public String getTransmisie() {
+        return transmisie;
+    }
+
+    public void setTransmisie(String transmisie) {
+        this.transmisie = transmisie;
+    }
+
+    public String getTractiune() {
+        return tractiune;
+    }
+
+    public void setTractiune(String tractiune) {
+        this.tractiune = tractiune;
+    }
+
+    public String getCombustibil() {
+        return combustibil;
+    }
+
+    public void setCombustibil(String combustibil) {
+        this.combustibil = combustibil;
+    }
+
+    public String getVopsea() {
+        return vopsea;
+    }
+
+    public void setVopsea(String vopsea) {
+        this.vopsea = vopsea;
+    }
+
+    public String getRoti() {
+        return roti;
+    }
+
+    public void setRoti(String roti) {
+        this.roti = roti;
+    }
+
+    public String getInterior() {
+        return interior;
+    }
+
+    public void setInterior(String interior) {
+        this.interior = interior;
+    }
+
+    public List<String> getDotariOptionaleExterioare() {
+        return dotariOptionaleExterioare;
+    }
+
+    public void setDotariOptionaleExterioare(List<String> dotariOptionaleExterioare) {
+        this.dotariOptionaleExterioare = dotariOptionaleExterioare;
+    }
+
+    public List<String> getDotariOptionaleInterioare() {
+        return dotariOptionaleInterioare;
+    }
+
+    public void setDotariOptionaleInterioare(List<String> dotariOptionaleInterioare) {
+        this.dotariOptionaleInterioare = dotariOptionaleInterioare;
+    }
+
+    public List<String> getDotariOptionaleGenerale() {
+        return dotariOptionaleGenerale;
+    }
+
+    public void setDotariOptionaleGenerale(List<String> dotariOptionaleGenerale) {
+        this.dotariOptionaleGenerale = dotariOptionaleGenerale;
+    }
+
+    public List<String> getAccesoriiVolkswagen() {
+        return accesoriiVolkswagen;
+    }
+
+    public void setAccesoriiVolkswagen(List<String> accesoriiVolkswagen) {
+        this.accesoriiVolkswagen = accesoriiVolkswagen;
+    }
+
+    public Integer getPretStandard() {
+        return pretStandard;
+    }
+
+    public Integer getPretFinal() {
+        return pretFinal;
     }
 }

@@ -3,16 +3,17 @@ package tema5;
 import java.util.List;
 
 public class MazdaConfigurator extends CarConfigurator {
-    public String nivelEchipare;
-    public String motor;
-    public String tractiune;
-    public String transmisie;
-    public String combustibil;
-    public String culoare;
-    public String jante;
-    public String tapitarii;
-    public List<String> accesorii;
-
+    private String nivelEchipare;
+    private String motor;
+    private String tractiune;
+    private String transmisie;
+    private String combustibil;
+    private String culoare;
+    private String jante;
+    private String tapitarii;
+    private List<String> accesorii;
+    private Integer pretStandard;
+    private Integer pretFinal;
 
     public MazdaConfigurator(String marca, String model, Integer anulFabricatiei,
                              String nivelEchipare, String motor, String tractiune,
@@ -51,7 +52,7 @@ public class MazdaConfigurator extends CarConfigurator {
     }
 
     public void calculPretStandard() {
-        if (model.equals("MAZDA MX-5")) {
+        if (getModel().equals("MAZDA MX-5")) {
             if (nivelEchipare.equals("PRIME-LINE")) {
                 pretStandard = 33190;
             }
@@ -66,12 +67,12 @@ public class MazdaConfigurator extends CarConfigurator {
 
             }
         }
-        System.out.println("Pretul standard al masinii este: \n" + pretStandard + " EURO");
+        System.out.println("Pretul standard al masinii cu echiparea " + getNivelEchipare() + " incepe de la: " + pretStandard + " EURO");
     }
 
     public void calculPretFinal() {
         double pretConfigurare = 0;
-        if (model.equals("MAZDA MX-5")) {
+        if (getModel().equals("MAZDA MX-5")) {
             if (nivelEchipare.equals("HOMURA")) {
                 switch (culoare) {
                     case "SOUL RED CRYSTAL":
@@ -98,8 +99,88 @@ public class MazdaConfigurator extends CarConfigurator {
                             break;
                     }
                 pretFinal = (int) (pretStandard + pretConfigurare);
-                System.out.println("Pretul final al masinii este: \n" + pretFinal + " EURO");
+                System.out.println("Pretul final al masinii cu optiunile alese este de: " + pretFinal + " EURO");
             }
         }
+    }
+
+    public String getNivelEchipare() {
+        return nivelEchipare;
+    }
+
+    public void setNivelEchipare(String nivelEchipare) {
+        this.nivelEchipare = nivelEchipare;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    public String getTractiune() {
+        return tractiune;
+    }
+
+    public void setTractiune(String tractiune) {
+        this.tractiune = tractiune;
+    }
+
+    public String getTransmisie() {
+        return transmisie;
+    }
+
+    public void setTransmisie(String transmisie) {
+        this.transmisie = transmisie;
+    }
+
+    public String getCombustibil() {
+        return combustibil;
+    }
+
+    public void setCombustibil(String combustibil) {
+        this.combustibil = combustibil;
+    }
+
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getJante() {
+        return jante;
+    }
+
+    public void setJante(String jante) {
+        this.jante = jante;
+    }
+
+    public String getTapitarii() {
+        return tapitarii;
+    }
+
+    public void setTapitarii(String tapitarii) {
+        this.tapitarii = tapitarii;
+    }
+
+    public List<String> getAccesorii() {
+        return accesorii;
+    }
+
+    public void setAccesorii(List<String> accesorii) {
+        this.accesorii = accesorii;
+    }
+
+    public Integer getPretStandard() {
+        return pretStandard;
+    }
+
+    public Integer getPretFinal() {
+        return pretFinal;
     }
 }

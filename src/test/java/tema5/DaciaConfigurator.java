@@ -3,16 +3,19 @@ package tema5;
 import java.util.List;
 
 public class DaciaConfigurator extends CarConfigurator {
-    public String versiune;
-    public String motor;
-    public String tractiune;
-    public String transmisie;
-    public String combustibil;
-    public String culoare;
-    public String jante;
-    public String interior;
-    public List<String> echipamenteDacia;
-    public List<String> accesoriiDacia;
+    private String versiune;
+    private String motor;
+    private String tractiune;
+    private String transmisie;
+    private String combustibil;
+    private String culoare;
+    private String jante;
+    private String interior;
+    private List<String> echipamenteDacia;
+    private List<String> accesoriiDacia;
+    private Integer pretStandard;
+    private Integer pretFinal;
+
 
 
     public DaciaConfigurator(String marca, String model, Integer anulFabricatiei,
@@ -58,7 +61,7 @@ public class DaciaConfigurator extends CarConfigurator {
     }
 
     public void calculPretStandard() {
-        if (model.equals("Duster")) {
+        if (getModel().equals("Duster")) {
             if (versiune.equals("ESSENTIAL")) {
                 pretStandard = 18800 ;
             }
@@ -73,12 +76,12 @@ public class DaciaConfigurator extends CarConfigurator {
 
             }
         }
-        System.out.println("Pretul standard al masinii este: \n" + pretStandard + " EURO");
+        System.out.println("Pretul standard al versiunii " + getVersiune() + " incepe de la: " + pretStandard + " EURO");
     }
 
     public void calculPretFinal() {
         double pretConfigurare = 0;
-        if (model.equals("Duster")) {
+        if (getModel().equals("Duster")) {
             if (versiune.equals("EXTREME")) {
                 switch (culoare) {
                     case "TERRACOTTA BRUN":
@@ -117,8 +120,96 @@ public class DaciaConfigurator extends CarConfigurator {
                             break;
                     }
                 pretFinal = (int) (pretStandard + pretConfigurare);
-                System.out.println("Pretul final al masinii este: \n" + pretFinal + " EURO");
+                System.out.println("Pretul final al masinii cu optiunile alese este de: " + pretFinal + " EURO");
             }
         }
+    }
+
+    public String getVersiune() {
+        return versiune;
+    }
+
+    public void setVersiune(String versiune) {
+        this.versiune = versiune;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    public String getTractiune() {
+        return tractiune;
+    }
+
+    public void setTractiune(String tractiune) {
+        this.tractiune = tractiune;
+    }
+
+    public String getTransmisie() {
+        return transmisie;
+    }
+
+    public void setTransmisie(String transmisie) {
+        this.transmisie = transmisie;
+    }
+
+    public String getCombustibil() {
+        return combustibil;
+    }
+
+    public void setCombustibil(String combustibil) {
+        this.combustibil = combustibil;
+    }
+
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getJante() {
+        return jante;
+    }
+
+    public void setJante(String jante) {
+        this.jante = jante;
+    }
+
+    public String getInterior() {
+        return interior;
+    }
+
+    public void setInterior(String interior) {
+        this.interior = interior;
+    }
+
+    public List<String> getEchipamenteDacia() {
+        return echipamenteDacia;
+    }
+
+    public void setEchipamenteDacia(List<String> echipamenteDacia) {
+        this.echipamenteDacia = echipamenteDacia;
+    }
+
+    public List<String> getAccesoriiDacia() {
+        return accesoriiDacia;
+    }
+
+    public void setAccesoriiDacia(List<String> accesoriiDacia) {
+        this.accesoriiDacia = accesoriiDacia;
+    }
+
+    public Integer getPretStandard() {
+        return pretStandard;
+    }
+
+    public Integer getPretFinal() {
+        return pretFinal;
     }
 }

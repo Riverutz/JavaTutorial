@@ -3,14 +3,15 @@ package oop;
 import java.util.List;
 
 public class DaciaConfigurator extends MasinaConfigurator {
-    public String versiune;
-    public String motor;
-    public String culoare;
-    public String jante;
-    public String interior;
-    public List<String> echipamente;
-    public List<String> accesorii;
-
+    private String versiune;
+    private String motor;
+    private String culoare;
+    private String jante;
+    private String interior;
+    private List<String> echipamente;
+    private List<String> accesorii;
+    private Double pretStandard;
+    private Double pretFinal;
 
     public DaciaConfigurator(String marca, String model, Integer an,
                              String versiune, String motor, String culoare, String jante, String interior,
@@ -50,7 +51,7 @@ public class DaciaConfigurator extends MasinaConfigurator {
     //TREBUIE SA DETERMINAM PRETUL STANDARD IN FUNCTIE DE MODEL(DACIA VS VW)
 
     public void calculPretStandard() {
-        if (model.equals("Logan")) {
+        if (getModel().equals("Logan")) {
             if (versiune.equals("Essential")) {
                 pretStandard = 13.500;
             }
@@ -64,12 +65,12 @@ public class DaciaConfigurator extends MasinaConfigurator {
                 pretStandard = 15.700;
             }
         }
-        System.out.printf("Pretul standard al masinii este: %,.3f \n", pretStandard);
+        System.out.printf("Pretul standard al versiunii " + versiune + " incepe de la: %,.3f \n", pretStandard);
     }
 
     public void calculPretFinal() {
         double pretOptiuni = 0.000;
-        if (model.equals("Logan")) {
+        if (getModel().equals("Logan")) {
             if (versiune.equals("Essential")) {
                 switch (culoare) {
                     case "Grey":
@@ -91,7 +92,71 @@ public class DaciaConfigurator extends MasinaConfigurator {
                 }
             }
         }
-        pretFinal=pretStandard + pretOptiuni;
-        System.out.printf("Pretul final al masinii este: %,.3f \n", pretFinal);
+        pretFinal = pretStandard + pretOptiuni;
+        System.out.printf("Pretul final al masinii cu optiunile alese este: %,.3f \n", pretFinal);
+    }
+
+    public String getVersiune() {
+        return versiune;
+    }
+
+    public void setVersiune(String versiune) {
+        this.versiune = versiune;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getJante() {
+        return jante;
+    }
+
+    public void setJante(String jante) {
+        this.jante = jante;
+    }
+
+    public String getInterior() {
+        return interior;
+    }
+
+    public void setInterior(String interior) {
+        this.interior = interior;
+    }
+
+    public List<String> getEchipamente() {
+        return echipamente;
+    }
+
+    public void setEchipamente(List<String> echipamente) {
+        this.echipamente = echipamente;
+    }
+
+    public List<String> getAccesorii() {
+        return accesorii;
+    }
+
+    public void setAccesorii(List<String> accesorii) {
+        this.accesorii = accesorii;
+    }
+
+    public Double getPretStandard() {
+        return pretStandard;
+    }
+
+    public Double getPretFinal() {
+        return pretFinal;
     }
 }
