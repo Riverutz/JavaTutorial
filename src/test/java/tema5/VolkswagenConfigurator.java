@@ -8,8 +8,8 @@ public class VolkswagenConfigurator extends CarConfigurator {
     private String transmisie;
     private String tractiune;
     private String combustibil;
-    private String vopsea; //Rosu (kings red metallic) 736,61 €
-    private String roti; //Jante aliaj usor "Leeds" 7,5J x 18,527,17 €
+    private String vopsea;
+    private String roti;
     private String interior;
     private List<String> dotariOptionaleExterioare;
     private List<String> dotariOptionaleInterioare;

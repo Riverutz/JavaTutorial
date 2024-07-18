@@ -17,14 +17,20 @@ public class OopTest {
                 "Essential","TCe 90 MT6", "Grey",
                 "Standard", "Standard", echipamenteLogan, accesoriiLogan);
         Logan.infoDacia();
+        Logan.pornesteMotor();
+        Logan.deschidereGeam();
+        Logan.promotieDacia();
+        Logan.promotieDacia("RABLA");
+        Logan.promotieDacia(25);
 
-        System.out.println("=========");
-        List<String> optionalePolo = Arrays.asList("Faruri LED Matrix", "Trapa de sticla panoramica",
-                "Alarma antifurt", "Keyless Access");
-        VolkswagenConfigurator Polo = new VolkswagenConfigurator("Volkswagen",
-                "Polo", 2023, "Advanced",
-                "Polo Advanced 1.0 TSI", "Argintiu (reflex silver metallic)", "Jante aliaj 15' - Essex, negre", "Stofa negru titan", optionalePolo);
-        Polo.infoVolkswagen();
+
+//        System.out.println("=========");
+//        List<String> optionalePolo = Arrays.asList("Faruri LED Matrix", "Trapa de sticla panoramica",
+//                "Alarma antifurt", "Keyless Access");
+//        VolkswagenConfigurator Polo = new VolkswagenConfigurator("Volkswagen",
+//                "Polo", 2023, "Advanced",
+//                "Polo Advanced 1.0 TSI", "Argintiu (reflex silver metallic)", "Jante aliaj 15' - Essex, negre", "Stofa negru titan", optionalePolo);
+//        Polo.infoVolkswagen();
 
 
     }

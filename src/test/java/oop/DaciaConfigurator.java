@@ -48,6 +48,14 @@ public class DaciaConfigurator extends MasinaConfigurator {
         calculPretFinal();
     }
 
+    //APLICAM POLIMORFISMUL DINAMIC
+    public void pornesteMotor(){
+        System.out.println("Masinile Dacia pornesc de la buton");
+    }
+    public void deschidereGeam(){
+        System.out.println("Geamurile masinilor Dacia se deschid de la manivela");
+    }
+
     //TREBUIE SA DETERMINAM PRETUL STANDARD IN FUNCTIE DE MODEL(DACIA VS VW)
 
     public void calculPretStandard() {
