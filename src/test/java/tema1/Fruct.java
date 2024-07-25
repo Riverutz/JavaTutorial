@@ -1,4 +1,4 @@
-package tema;
+package tema1;
 
 import org.testng.annotations.Test;
 
